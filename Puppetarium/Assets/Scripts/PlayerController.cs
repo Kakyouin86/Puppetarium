@@ -56,7 +56,9 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Player Square selected");
                 activePlayer = 1;
                 theRB = playerSquare.GetComponent<Rigidbody2D>();
-                }
+                var virtualCamera = GameObject.FindGameObjectWithTag("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
+                virtualCamera.Follow = playerSquare.transform;
+            }
                 break;
 
             case "2":
@@ -64,7 +66,9 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Player Triangle selected");
                 activePlayer = 2;
                 theRB = playerTriangle.GetComponent<Rigidbody2D>();
-                }
+                var virtualCamera = GameObject.FindGameObjectWithTag("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
+                virtualCamera.Follow = playerTriangle.transform;
+            }
                 break;
 
             case "3":
@@ -72,7 +76,9 @@ public class PlayerController : MonoBehaviour
                 Debug.Log("Player Circle selected");
                 activePlayer = 3;
                 theRB = playerCircle.GetComponent<Rigidbody2D>();
-                }
+                var virtualCamera = GameObject.FindGameObjectWithTag("Virtual Camera").GetComponent<CinemachineVirtualCamera>();
+                virtualCamera.Follow = playerCircle.transform;
+            }
                 break;
         }
     }
